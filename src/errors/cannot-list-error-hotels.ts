@@ -6,3 +6,10 @@ export function cannotListHotelsError(): ApplicationError {
     message: 'Cannot list hotels!',
   };
 }
+
+export function cannotHotelsErrorId(): ApplicationError {
+  return {
+    name: 'CannotTicketHotelsError',
+    message: 'Cannot ticket hotels!',
+  };
+}
