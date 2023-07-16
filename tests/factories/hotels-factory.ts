@@ -15,7 +15,7 @@ export async function createRoomWithHotelId(hotelId: number) {
     data: {
       name: faker.name.firstName(),
       capacity: faker.datatype.number(),
-      hotelId: hotelId,
+      hotelId,
     },
   });
 }
