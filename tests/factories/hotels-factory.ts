@@ -19,3 +19,28 @@ export async function createRoomWithHotelId(hotelId: number) {
     },
   });
 }
+
+export async function createHotelsData() {
+  const hotel = await prisma.hotel.create({
+    data: {
+      name: faker.commerce.department(),
+      image: faker.image.imageUrl(),
+      createdAt: faker.date.recent(),
+      updatedAt: faker.date.future(),
+    },
+    include: {
+      Rooms: true,
+    },
+  });
+  return hotel;
+}
+export async function createTicketTypeData() {
+  return prisma.ticketType.create({
+    data: {
+      name: faker.name.findName(),
+      price: faker.datatype.number(),
+      isRemote: false,
+      includesHotel: true,
+    },
+  });
+}
